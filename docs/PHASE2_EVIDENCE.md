@@ -66,6 +66,17 @@ refund tx:       bff8e576dbf19558a15146cf92b59e1ccb1248dc8cc979f9214a1173c967d29
 
 The requester refund was rejected before maturity and accepted after the fixed 1,000-DAA timeout.
 
-## Remaining Gap
+## Two-Miner Contention Proof
 
-The workstation has one RTX 3070. Two simultaneous resident SD 1.5 miners exceed the practical VRAM budget, so the required two-capable-miner live contention run remains open. Competing claims, loser rejection, reassignment, and deadline behavior are covered by consensus tests, but Phase 2 must remain active until repeated on two GPUs or two hosts.
+The final contention run used an isolated Vast Ubuntu 24.04 host with one RTX 5090 (32 GB), CUDA 13.1, a loopback-only devnet node, offline loopback IPFS, and exactly two simultaneous claim-capable miners with distinct disposable claimant keys. The model SHA-256 matched Phase 1 (`9685394cae6ede69f28d1799ad54bd7c059a941eb3d3054802bf318422294745`); the generated resident snapshot contained 1,130 tensors, 1,882,960,352 bytes, and 58,842,511 chunks.
+
+```text
+request tx: 497f2da4f7327df3f344cefb5a27364dfa4f822d263cb4cdf67458f2460218b7
+winner:     miner 1
+CID:        QmSUnCywaah3WWPj2UGuGYQccSnNhfBy8cPZGSEKGgDr6N
+response:   1bcfc97ffdc43eae5246bfd61831ba02dfcd171d12d6a13ed8d67733fec8ad6a
+```
+
+After another 60 seconds of heavy virtual-chain churn, miner 1 had observed 1,062 winning lease confirmations but performed exactly one inference and one cached response replay. Miner 2 made 1,082 competing claim attempts but observed no winning lease and performed zero inference. This proves canonical single-owner selection and one expensive inference per request across lease and request-block reorgs.
+
+Remote `ipfs cat` returned exactly 786,447 bytes with the expected `P6\n512 512\n255\n` header. The node registered the payable `AiResponse`. All remote miners, node, and IPFS daemon were then stopped cleanly.

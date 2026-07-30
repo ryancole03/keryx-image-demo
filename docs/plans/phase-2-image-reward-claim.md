@@ -6,6 +6,4 @@ Trace the existing escrow path completely before changing consensus. Prove compe
 
 ## Status
 
-Implementation, automated consensus coverage, a live payable image response, IPFS retrieval, and a live terminal refund are complete. Evidence is recorded in `docs/PHASE2_EVIDENCE.md`.
-
-The plan remains active because the workstation has one RTX 3070 and cannot run two resident SD 1.5 miners concurrently. Complete the final contention proof on two GPUs or two hosts.
+Complete. Implementation, automated consensus coverage, a live payable image response, IPFS retrieval, a live terminal refund, and an exactly-two-capable-miner contention run all passed. Evidence is recorded in `docs/PHASE2_EVIDENCE.md`.
