@@ -44,6 +44,39 @@ Use `logs`, `status`, `down`, or `reset` with either launcher. `reset` removes d
 
 All node, miner, backend, and Kubo interfaces remain inside one container on loopback. Docker publishes only the browser endpoint to host `127.0.0.1`.
 
+## SD 1.5 License and Responsible Use
+
+The SD 1.5 model weights use the CreativeML Open RAIL-M license. Commercial use and hosted generation are permitted without a model royalty or revenue threshold, but the license includes binding use restrictions. This model license is separate from the licenses covering stable-diffusion.cpp and the Keryx source code.
+
+For a hosted or distributed service, the license requires operators to:
+
+- Make the paragraph 5 use restrictions enforceable through the terms governing model access.
+- Require users to comply with the prohibited uses in Attachment A.
+- Provide the license and preserve applicable copyright, patent, trademark, and attribution notices when redistributing the model or derivatives.
+- Mark modified model files. The Q8_0 GGUF produced by this demo is a quantized derivative of the source checkpoint.
+- Treat users as responsible for generated outputs. The model provider claims no rights in outputs but does not guarantee that an output is lawful or non-infringing.
+
+This repository downloads the source checkpoint and converts it locally rather than redistributing model weights. Any separately hosted Q8_0 artifact should include a copy of the license, retained notices, and a prominent quantization notice.
+
+Attachment A prohibits uses including unlawful activity, exploitation or harm of minors, deliberately harmful false information, harmful disclosure of personal information, harassment or defamation, adverse automated legal decisions, discrimination, exploitation of vulnerable groups, and medical advice or interpretation. Read the complete list rather than relying on this summary.
+
+This private-devnet PoC does not implement production content moderation. Before any public or commercial deployment:
+
+- Require acceptance of an acceptable-use policy containing the license restrictions.
+- Apply prompt checks at the service boundary before writing a request to the chain. Browser-only checks are bypassable.
+- Check generated images on the miner before IPFS pinning or CID publication. Rejected results should be quarantined rather than published.
+- Add rate limits, abuse reporting, operator audit records, and a documented review and appeal process.
+- Record the model, moderation-policy version, and operator responsible for each response.
+- Define miner obligations and violation handling separately from PoM. PoM proves model residency, not license compliance or semantic safety.
+
+No classifier or blocklist can guarantee prevention. Controls should combine user terms, server-side enforcement, output review, and incident handling, with qualified legal review before deployment.
+
+Sources:
+
+- [CreativeML Open RAIL-M license](https://github.com/CompVis/stable-diffusion/blob/main/LICENSE)
+- [Stable Diffusion v1.5 model card](https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5)
+- [Stability AI public release and commercial-use statement](https://stability.ai/news-updates/stable-diffusion-public-release)
+
 ## Target Environment
 
 - Windows with WSL2 `Ubuntu-24.04`
