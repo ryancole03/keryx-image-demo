@@ -4,7 +4,6 @@ models/
 .ledger/
 .ledger-project
 .ledger-handoff.setup.lock
-upstream/
 escrow.key
 escrow_state.json
 *.obj

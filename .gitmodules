@@ -1,0 +1,12 @@
+[submodule "upstream/keryx-node"]
+	path = upstream/keryx-node
+	url = https://github.com/ryancole03/keryx-node.git
+	branch = image-demo
+[submodule "upstream/keryx-miner"]
+	path = upstream/keryx-miner
+	url = https://github.com/ryancole03/keryx-miner.git
+	branch = image-demo
+[submodule "upstream/stable-diffusion.cpp"]
+	path = upstream/stable-diffusion.cpp
+	url = https://github.com/ryancole03/stable-diffusion.cpp.git
+	branch = image-demo

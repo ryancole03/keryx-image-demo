@@ -17,6 +17,13 @@ Requirements:
 - Docker Compose v2.30 or newer
 - About 30 GB of free disk space for the build cache, images, source weights, and the cached Q8_0 model
 
+Clone the demo and its pinned source forks:
+
+```bash
+git clone --recurse-submodules https://github.com/ryancole03/keryx-image-demo.git
+cd keryx-image-demo
+```
+
 Ubuntu:
 
 ```bash
