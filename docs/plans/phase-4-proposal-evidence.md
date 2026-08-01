@@ -10,4 +10,4 @@ Proposal draft and local evidence closeout are recorded in `docs/PHASE4_PROPOSAL
 
 The developer demo package uses one Docker Compose runtime with thin Ubuntu and Windows launchers. GPU runs passed on both platforms, and a clean Ubuntu run passed automatic model preparation, funding maturity, image generation, restart recovery, and loopback-only exposure.
 
-Phase 4 remains open until the Phase 3 work is committed to a user-owned fork and the proposal can link to that fork or a public demonstration. The clean Ubuntu run verified the recorded model download, conversion, and hash checks. Official origin remotes remain read-only.
+Phase 4 completed on 2026-08-01. The Phase 3 work is committed to public user-owned forks, the demo pins exact source revisions as submodules, and a fresh public recursive clone reached Docker healthy status and returned the browser URL. The clean Ubuntu run verified the recorded model download, conversion, and hash checks. Official origin remotes remain read-only.

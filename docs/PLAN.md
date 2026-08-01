@@ -90,6 +90,8 @@ The phases are ordered so that protocol and UI work do not hide a failed zero-co
 
 ## Phase 4: Proposal Evidence and Closeout
 
+Status: Complete (2026-08-01)
+
 ### Work
 
 - Record architecture diagrams and protocol deltas.
@@ -115,8 +117,5 @@ The phases are ordered so that protocol and UI work do not hide a failed zero-co
 
 ## Immediate Next Steps
 
-1. Initialize source control for the PoC workspace.
-2. Clone and pin the three upstream repositories.
-3. Verify clean upstream builds in WSL2.
-4. Capture the exact built-in devnet parameter schema and create the isolated configuration.
-5. Start the stable-diffusion.cpp CUDA shared-library spike.
+1. Ask Keryx developers to run the public demo and record any setup friction.
+2. Keep stablecoin settlement and token economics as separate future research.

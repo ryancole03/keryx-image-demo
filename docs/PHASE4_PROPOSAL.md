@@ -257,11 +257,13 @@ The RTX 5090 timings come from the controlled 144-image study. They are not cros
 - CUDA and GGML stream synchronization is mandatory before inference.
 - Supporting more models would require separate resident-byte canonicalization, VRAM measurement, and failure gates.
 
-## Publication blockers
+## Published demonstration
 
-The packaged demonstration works on Windows and Ubuntu, but Phase 4 and this proposal are not ready to send upstream yet:
+The reproducible demonstration and source forks are public:
 
-- Phase 3 changes are still uncommitted in the root, `upstream/keryx-node`, and `upstream/keryx-miner` worktrees.
-- No fork URL or public demonstration URL exists. Official origin remotes are read-only for this work.
+- Demo: https://github.com/ryancole03/keryx-image-demo at `7822ddf18858a73c236d50e0b89060f288d8bf57`
+- Node: https://github.com/ryancole03/keryx-node/tree/image-demo at `04b70fe2de4dd422cfce5073d121990b4aa12759`
+- Miner: https://github.com/ryancole03/keryx-miner/tree/image-demo at `e920b91496d7be166cb16ec56287c7c41235177f`
+- Stable Diffusion: https://github.com/ryancole03/stable-diffusion.cpp/tree/image-demo at `6dd629bb476b069394448acad41760af923d9c6c`
 
-Resolve those items in a user-owned fork or artifact location. Do not push to the official origins or open an official-origin pull request from this workspace.
+A fresh public `git clone --recurse-submodules` checked out those exact revisions, passed Docker and GPU preflight checks, built with tracked Cargo lockfiles, reached Docker healthy status, and returned the browser URL. The official origin remotes remain read-only; all published work is in user-owned forks.
