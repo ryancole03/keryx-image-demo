@@ -94,6 +94,8 @@ The phases are ordered so that protocol and UI work do not hide a failed zero-co
 
 - Record architecture diagrams and protocol deltas.
 - Record reproducible setup and launch commands.
+- Provide one-command Docker launchers for Ubuntu and Windows.
+- Verify model download, conversion, hashes, GPU access, service health, and loopback isolation automatically.
 - Capture GPU memory, latency, throughput, mining pause, and reward evidence.
 - Document limitations and unresolved verification questions.
 - Prepare a concise upstream proposal with links to the working fork and demonstration.
@@ -101,9 +103,15 @@ The phases are ordered so that protocol and UI work do not hide a failed zero-co
 ### Acceptance
 
 - A new developer can reproduce the devnet and demonstration from documentation.
+- Fresh Ubuntu and Windows machines can reach the browser demo with one supported command after Docker GPU setup.
+- Startup failures identify the missing prerequisite instead of leaving a partial stack running.
 - All changed-code tests pass with commands and results recorded.
 - Product scope, maintainability risks, and remaining work are explicit.
 - No phase is marked complete while required product behavior remains unverified.
+
+## Possible Future Roadmap
+
+- Explore optional stablecoin-denominated service payments after the image protocol is proven. Miner payments, development funding, token buybacks, and protocol-owned liquidity require separate economic modeling and regulatory review.
 
 ## Immediate Next Steps
 

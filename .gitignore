@@ -1,4 +1,5 @@
 runtime/
+models/
 .keryx/
 .ledger/
 .ledger-project

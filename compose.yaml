@@ -1,0 +1,28 @@
+name: keryx-image-demo
+
+services:
+  demo:
+    build:
+      context: .
+      dockerfile: demo/Dockerfile
+    image: keryx-image-demo:local
+    init: true
+    gpus: all
+    ports:
+      - "127.0.0.1:8080:8081"
+    volumes:
+      - ${KERYX_MODELS_DIR:-./models}:/models
+      - demo-data:/data
+    environment:
+      RUST_LOG: ${RUST_LOG:-info}
+      KERYX_SD_MODEL: ${KERYX_SD_MODEL:-/models/sd-v1-5-q8_0.gguf}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8081/ready >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30m
+    stop_grace_period: 30s
+
+volumes:
+  demo-data:

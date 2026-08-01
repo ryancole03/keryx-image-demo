@@ -1,0 +1,11 @@
+.git
+**/.git
+**/target
+**/build
+**/build-*
+graphify-out
+models
+runtime
+.ledger
+*.exe
+*.obj
